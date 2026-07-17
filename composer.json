@@ -9,8 +9,8 @@
     "issues": "https://github.com/xpayrcom/xpayr-php-sdk/issues",
     "docs": "https://xpayr.com/doc-api"
   },
-  "repositories": [
-    { "type": "vcs", "url": "https://github.com/xpayrcom/xpayr-php-sdk" }
+  "funding": [
+    { "type": "custom", "url": "https://xpayr.com" }
   ],
   "require": {
     "php": ">=8.1",

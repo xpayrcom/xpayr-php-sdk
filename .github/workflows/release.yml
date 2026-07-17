@@ -1,0 +1,27 @@
+name: Validate release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    if: startsWith(github.event.release.tag_name, 'v')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+      - uses: ramsey/composer-install@v3
+      - run: composer validate --strict
+      - run: composer lint
+      - run: composer test
+      - name: Verify release tag format
+        run: php -r 'exit(preg_match("/^v[0-9]+\\.[0-9]+\\.[0-9]+$/", getenv("TAG")) ? 0 : 1);'
+        env:
+          TAG: ${{ github.event.release.tag_name }}

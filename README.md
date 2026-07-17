@@ -24,11 +24,13 @@ composer install
 composer test
 ```
 
-Install from the repository during the developer preview:
+Install the published package:
 
 ```bash
-composer require xpayr/xpayr-php
+composer require xpayr/xpayr-php:^0.1
 ```
+
+For repository development, run `composer install`, `composer lint`, and `composer test`.
 
 ## Usage
 
