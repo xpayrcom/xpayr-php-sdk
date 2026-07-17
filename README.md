@@ -5,7 +5,7 @@
 
 Official PHP SDK for XPayr payment sessions, merchant operations, webhook verification, and server-side crypto checkout integrations.
 
-> **Status:** Developer preview · v0.1
+> **Status:** Public beta · v0.1.0
 
 ## Purpose
 
